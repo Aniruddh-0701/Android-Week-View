@@ -3,9 +3,9 @@ package com.alamkanak.weekview.sample.apiclient;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 
-import com.alamkanak.weekview.WeekViewEvent;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.my_widgets.weekview.WeekViewEvent;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

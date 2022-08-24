@@ -2,18 +2,18 @@ package com.alamkanak.weekview.sample;
 
 import android.widget.Toast;
 
-import com.alamkanak.weekview.WeekViewEvent;
 import com.alamkanak.weekview.sample.apiclient.Event;
 import com.alamkanak.weekview.sample.apiclient.MyJsonService;
+import com.my_widgets.weekview.WeekViewEvent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * An example of how events can be fetched from network and be displayed on the week view.
@@ -31,8 +31,8 @@ public class AsynchronousActivity extends BaseActivity implements Callback<List<
         // Download events from network if it hasn't been done already. To understand how events are
         // downloaded using retrofit, visit http://square.github.io/retrofit
         if (!calledNetwork) {
-            RestAdapter retrofit = new RestAdapter.Builder()
-                    .setEndpoint("https://api.myjson.com/bins")
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://api.myjson.com/bins")
                     .build();
             MyJsonService service = retrofit.create(MyJsonService.class);
             service.listEvents(this);
@@ -61,18 +61,22 @@ public class AsynchronousActivity extends BaseActivity implements Callback<List<
         return (event.getStartTime().get(Calendar.YEAR) == year && event.getStartTime().get(Calendar.MONTH) == month - 1) || (event.getEndTime().get(Calendar.YEAR) == year && event.getEndTime().get(Calendar.MONTH) == month - 1);
     }
 
+
     @Override
-    public void success(List<Event> events, Response response) {
-        this.events.clear();
-        for (Event event : events) {
-            this.events.add(event.toWeekViewEvent());
+    public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+        if (call.isExecuted() && response.body() != null) {
+            for (Event event : response.body()) {
+                this.events.add(event.toWeekViewEvent());
+            }
+            getWeekView().notifyDatasetChanged();
         }
-        getWeekView().notifyDatasetChanged();
     }
 
     @Override
-    public void failure(RetrofitError error) {
-        error.printStackTrace();
-        Toast.makeText(this, R.string.async_error, Toast.LENGTH_SHORT).show();
+    public void onFailure(Call<List<Event>> call, Throwable t) {
+        if (call.isCanceled()) {
+            t.printStackTrace();
+            Toast.makeText(this, R.string.async_error, Toast.LENGTH_SHORT).show();
+        }
     }
 }
