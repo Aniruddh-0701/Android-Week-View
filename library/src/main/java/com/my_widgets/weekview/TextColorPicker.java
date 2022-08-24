@@ -1,6 +1,6 @@
-package com.alamkanak.weekview;
+package com.my_widgets.weekview;
 
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 
 public interface TextColorPicker {
 

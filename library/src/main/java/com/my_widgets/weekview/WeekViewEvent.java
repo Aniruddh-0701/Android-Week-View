@@ -1,13 +1,14 @@
-package com.alamkanak.weekview;
+package com.my_widgets.weekview;
+
+import static com.my_widgets.weekview.WeekViewUtil.isSameDay;
 
 import android.graphics.Shader;
-import android.support.annotation.ColorInt;
+
+import androidx.annotation.ColorInt;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import static com.alamkanak.weekview.WeekViewUtil.isSameDay;
 
 /**
  * Created by Raquib-ul-Alam Kanak on 7/21/2014.

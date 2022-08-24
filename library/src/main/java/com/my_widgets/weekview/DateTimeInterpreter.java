@@ -1,4 +1,4 @@
-package com.alamkanak.weekview;
+package com.my_widgets.weekview;
 
 import java.util.Calendar;
 

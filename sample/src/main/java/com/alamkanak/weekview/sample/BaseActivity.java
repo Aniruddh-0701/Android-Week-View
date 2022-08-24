@@ -2,10 +2,7 @@ package com.alamkanak.weekview.sample;
 
 import android.content.ClipData;
 import android.graphics.RectF;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,10 +10,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alamkanak.weekview.DateTimeInterpreter;
-import com.alamkanak.weekview.MonthLoader;
-import com.alamkanak.weekview.WeekView;
-import com.alamkanak.weekview.WeekViewEvent;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.my_widgets.weekview.DateTimeInterpreter;
+import com.my_widgets.weekview.MonthLoader;
+import com.my_widgets.weekview.WeekView;
+import com.my_widgets.weekview.WeekViewEvent;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -27,7 +26,7 @@ import java.util.Locale;
  * This is a base activity which contains week view and all the codes necessary to initialize the
  * week view.
  * Created by Raquib-ul-Alam Kanak on 1/3/2014.
- * Website: http://alamkanak.github.io
+ * Website: <a href="http://alamkanak.github.io">alamkanak - github.io</a>
  */
 public abstract class BaseActivity extends AppCompatActivity implements WeekView.EventClickListener, MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener, WeekView.EmptyViewClickListener, WeekView.AddEventClickListener, WeekView.DropListener {
     private static final int TYPE_DAY_VIEW = 1;
@@ -109,8 +108,7 @@ public abstract class BaseActivity extends AppCompatActivity implements WeekView
         */
     }
 
-    private final class DragTapListener implements View.OnLongClickListener {
-        @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
+    private static final class DragTapListener implements View.OnLongClickListener {
         @Override
         public boolean onLongClick(View v) {
             ClipData data = ClipData.newPlainText("", "");

@@ -4,8 +4,8 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
-import com.alamkanak.weekview.TextColorPicker;
-import com.alamkanak.weekview.WeekViewEvent;
+import com.my_widgets.weekview.TextColorPicker;
+import com.my_widgets.weekview.WeekViewEvent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
