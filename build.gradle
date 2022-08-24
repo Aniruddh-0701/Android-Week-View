@@ -18,28 +18,6 @@ plugins {
 }
 
 
-publishing {
-    publications {
-        library(MavenPublication) {
-            //setGroupId groupId
-            setGroupId "com.github.Aniruddh-0701"
-            //setArtifactId artifactId
-            setArtifactId "AndroidWeekView"
-            version "2.4.0"
-
-            pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
-                def dependencyNode = dependenciesNode.appendNode('dependency')
-                dependencyNode.appendNode('groupId', 'com.github.Aniruddh-0701')
-                dependencyNode.appendNode('artifactId', 'AndroidWeekView-core')
-                dependencyNode.appendNode('version', '2.4.0')
-
-            }
-        }
-    }
-}
-
-
 allprojects {
     version = VERSION_NAME
     group = GROUP
