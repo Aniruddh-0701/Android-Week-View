@@ -130,3 +130,5 @@ gradle-app.setting
 *.iml
 
 javadoc/
+
+secret_key.txt
