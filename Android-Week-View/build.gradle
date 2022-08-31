@@ -11,8 +11,10 @@ android {
         minSdkVersion 9
         targetSdkVersion 33
     }
-}
 
+    publishing {
+    }
+}
 configurations {
     javadocDeps
 }
@@ -20,4 +22,10 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.0'
 }
 
-//apply from: 'gradle-mvn-push.gradle'
+ext {
+    PUBLISH_GROUP_ID = 'io.github.aniruddh-0701'
+    PUBLISH_VERSION = '2.4.1.1'
+    PUBLISH_ARTIFACT_ID = 'Android-Week-View'
+}
+
+apply from: 'gradle-library.gradle'
