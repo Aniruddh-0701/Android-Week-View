@@ -31,7 +31,7 @@ Who uses it
 Getting Started
 ---------------
 
-See the [Getting Started](./getting_started.md) page in docs
+See the [Getting Started](./getting_started.md) page
 
 Changelog
 ----------
