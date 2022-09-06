@@ -31,18 +31,23 @@ Who uses it
 Getting Started
 ---------------
 
-See the [wiki](https://aniruddh-0701.github.io/Android-Week-View/)
+See the [Getting Started](https://aniruddh-0701.github.io/Android-Week-View/docs/getting_started.md) page in docs
+
+Changelog
+----------
+
+See [Changelog](https://aniruddh-0701.github.io/Android-Week-View/docs/changelog.md)
 
 Sample
 ----------
 
-There is also a [sample app](https://github.com/quivr/Android-Week-View/tree/master/sample) to get you started.
+There is also a [sample app](https://github.com/Aniruddh-0701/Android_Week_View_Sample_App) to get you started.
 
 
 License
 ----------
 
-    Copyright 2014 Raquib-ul-Alam
+    Copyright 2022 Aniruddh Ramanujam
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
